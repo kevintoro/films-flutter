@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:peliculas/src/models/film_model.dart';
 import 'package:peliculas/src/providers/film_provider.dart';
 import 'package:peliculas/src/widgets/card_swiper_widget.dart';
+import 'package:peliculas/src/widgets/movie_horizontal.dart';
 
 class HomePage extends StatelessWidget {
   HomePage({Key key}) : super(key: key);
@@ -21,12 +23,16 @@ class HomePage extends StatelessWidget {
         ],
       ),
       body: Column(
-        children: [_swiperCards()],
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: [
+          _swiperCards(),
+          _topRated(context),
+        ],
       ),
     );
   }
 
-  _swiperCards() {
+  Widget _swiperCards() {
     return FutureBuilder(
       future: filmProvider.getNowPlaying(),
       builder: (BuildContext context, AsyncSnapshot<List> snapshot) {
@@ -41,6 +47,35 @@ class HomePage extends StatelessWidget {
           );
         }
       },
+    );
+  }
+
+  Widget _topRated(BuildContext context) {
+    return Container(
+      width: double.infinity,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Container(
+            padding: EdgeInsets.only(left: 20.0),
+            child: Text(
+              'Populares',
+              style: Theme.of(context).textTheme.subtitle1,
+            ),
+          ),
+          SizedBox(height: 10),
+          FutureBuilder(
+            builder: (context, AsyncSnapshot<List<Film>> snapshot) {
+              if (snapshot.hasData) {
+                return MovieHorizontal(films: snapshot.data);
+              } else {
+                return CircularProgressIndicator();
+              }
+            },
+            future: filmProvider.getPopular(),
+          ),
+        ],
+      ),
     );
   }
 }
