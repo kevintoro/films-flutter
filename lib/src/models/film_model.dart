@@ -71,4 +71,12 @@ class Film {
       return 'https://image.tmdb.org/t/p/w500$posterPath';
     }
   }
+
+  String getBackdropPath() {
+    if (backdropPath == null) {
+      return 'https://www.allianceplast.com/wp-content/uploads/2017/11/no-image.png';
+    } else {
+      return 'https://image.tmdb.org/t/p/w500$backdropPath';
+    }
+  }
 }
