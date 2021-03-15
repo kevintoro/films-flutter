@@ -1,5 +1,5 @@
 class Films {
-  List<Film> films = new List();
+  List<Film> films = [];
   Films();
 
   Films.fromJSONList(List<dynamic> data) {
