@@ -41,4 +41,4 @@ app.*.symbols
 app.*.map.json
 
 # Data
-/lib/src/providers/
+/lib/src/providers/film_generic_provider.dart
