@@ -43,6 +43,7 @@ class MovieHorizontal extends StatelessWidget {
   }
 
   Widget _card(BuildContext context, Film film) {
+    film.uniqueId = '${film.id}-card';
     final card = Container(
       margin: EdgeInsets.only(
         right: 10.0,
@@ -50,7 +51,7 @@ class MovieHorizontal extends StatelessWidget {
       child: Column(
         children: [
           Hero(
-            tag: film.id,
+            tag: film.uniqueId,
             child: ClipRRect(
               borderRadius: BorderRadius.circular(10.0),
               child: FadeInImage(
