@@ -1,16 +1,12 @@
 # peliculas
 
-A new Flutter project.
+Proyecto con diseño sencillo, en el que se ve información de películas, y también se realizan búsquedas, todo haciendo consumo de la API de [the MovieDB](https://www.themoviedb.org/),
 
-## Getting Started
+## IMPORTANTE
 
-This project is a starting point for a Flutter application.
+Es necesario crear una cuenta en el servicio de The MovieDB, y colocar el API key en `lib/src/providers/film_provider.dart` antes de ejecutar el proyecyo
 
-A few resources to get you started if this is your first Flutter project:
+Para correr el proyecto, suponiendo que se tiene instalado flutter en la máquina, hay que conectar un dispositivo por cable de datos, o iniciar un emulador, y correr los siguientes comandos en consola:
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+`flutter pub get` (para obtener las dependencias) \
+`flutter run` (ejecutará en modo debug)
