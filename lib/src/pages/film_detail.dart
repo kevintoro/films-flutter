@@ -32,6 +32,7 @@ class FilmDetail extends StatelessWidget {
 
   Widget _createAppBar(Film film) {
     return SliverAppBar(
+      brightness: Brightness.dark,
       elevation: 2.0,
       backgroundColor: Colors.indigo,
       // que tan ancho quiero que sea la expansión

@@ -15,6 +15,7 @@ class HomePage extends StatelessWidget {
     filmProvider.getPopular();
     return Scaffold(
       appBar: AppBar(
+        brightness: Brightness.dark,
         title: Text('Cinema Films'),
         backgroundColor: Colors.indigoAccent,
         actions: [
@@ -30,7 +31,7 @@ class HomePage extends StatelessWidget {
         ],
       ),
       body: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           _swiperCards(),
           _topRated(context),
