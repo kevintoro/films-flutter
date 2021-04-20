@@ -42,3 +42,4 @@ app.*.map.json
 
 # Data
 /lib/src/providers/film_generic_provider.dart
+/android/key.propierties
